@@ -1,0 +1,23 @@
+{
+  "name": "so-answers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/react": "^16.7.18"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragomirtitian/so-answers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dragomirtitian/so-answers/issues"
+  },
+  "homepage": "https://github.com/dragomirtitian/so-answers#readme"
+}
