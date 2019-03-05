@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@types/react": "^16.7.18"
+    "@types/chart.js": "^2.7.45",
+    "@types/react": "^16.7.18",
+    "typescript": "^3.4.0-dev.20190302"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,36 +1,13 @@
-import * as React from "react";
-import { FunctionComponent } from "react";
+    import * as React from "react";
 
-type InputProps = { // The common Part
-    className?: string;
-    placeholder?: string;
-} & ({ // The discriminated union
-    type?: "text";
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-} | {
-    type: "textarea";
-    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-})
+    const ConditionalSwitch = <C extends React.ComponentType<any>>({ Component,  showIfTrue, ...rest}: { Component: C, showIfTrue: boolean} & React.ComponentProps<C> ) => (
+        showIfTrue
+            ? <Component {...(rest as any) }/>
+            : null
+    );
 
-const Input: FunctionComponent<InputProps> = (props: InputProps) => {
-    if (props.type === 'textarea') {
-        return <textarea {...props} />;
+    function TestComp({ title, text}: {title: string, text: string}) {
+        return null!;
     }
-    return <input {...props} />;
-};
 
-
-type State = {}
-class Usage extends React.Component<State> {
-    state!: State;
-
-    onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({ input: e.target.value });
-    };
-
-    render() {
-        return (
-            <Input placeholder="Write an something..." onChange={this.onInputChange} />
-        );
-    }
-}
+    let e = <ConditionalSwitch Component={TestComp} showIfTrue={true} title="aa" text="aa" />  // title and text are checked
